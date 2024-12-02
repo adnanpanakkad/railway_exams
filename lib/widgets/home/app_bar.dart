@@ -9,41 +9,41 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
     // Get screen dimensions
     final screenWidth = MediaQuery.of(context).size.width;
 
-    return Padding(
-      padding: EdgeInsets.only(right: screenWidth * 0.04), // Responsive padding
-      child: Container(
-        decoration: BoxDecoration(
-          // Only add a border at the bottom
-          border: Border(
-            bottom: BorderSide(
-              color: Colors.grey, // Grey border color
-              width: 1, // Border width
-            ),
+    return Container(
+      decoration: BoxDecoration(
+        // Only add a border at the bottom
+        border: Border(
+          bottom: BorderSide(
+            color: Colors.grey, // Grey border color
+            width: 1, // Border width
           ),
         ),
-        child: AppBar(
-          title: Row(
-            children: [
-              SizedBox(
-                height: screenWidth * 0.08, // Responsive logo height
-                child: Image.asset(
-                  'assets/unacademy.logo.png',
-                  fit: BoxFit.contain,
-                  errorBuilder: (context, error, stackTrace) =>
-                      const Icon(Icons.error),
-                ),
+      ),
+      child: AppBar(
+        title: Row(
+          children: [
+            SizedBox(
+              height: screenWidth * 0.08, // Responsive logo height
+              child: Image.asset(
+                'assets/unacademy.logo.png',
+                fit: BoxFit.contain,
+                errorBuilder: (context, error, stackTrace) =>
+                    const Icon(Icons.error),
               ),
-              SizedBox(
-                  width: screenWidth * 0.025), // Spacing between logo and title
-              Text(
-                'Railway Exams', // Title text
-                style: CustomTextStyle.buttonTextStyle,
-              ),
-            ],
-          ),
-          backgroundColor: Colors.black,
-          actions: [
-            Container(
+            ),
+            SizedBox(
+                width: screenWidth * 0.025), // Spacing between logo and title
+            Text(
+              'Railway Exams', // Title text
+              style: CustomTextStyle.buttonTextStyle,
+            ),
+          ],
+        ),
+        backgroundColor: Colors.black,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0),
+            child: Container(
               width: screenWidth * 0.09, // Responsive circle size
               height: screenWidth * 0.09,
               decoration: BoxDecoration(
@@ -65,8 +65,8 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
                 },
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

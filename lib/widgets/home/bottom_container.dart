@@ -27,7 +27,7 @@ class BottomContainer extends StatelessWidget {
               backgroundColor: Colors.greenAccent, // Green accent color
             ),
             child: const Text(
-              'View subscription plans',
+              'View  plans',
               style: TextStyle(color: Colors.white), // Button text color
             ),
           ),

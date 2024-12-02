@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:railway_exams/widgets/utils/app_colors.dart';
 import 'package:railway_exams/widgets/utils/custom_textstyles.dart';
 
 class LastContainer extends StatelessWidget {
@@ -25,64 +26,79 @@ class LastContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[800], // Background color of the container
-        //borderRadius: BorderRadius.circular(12),
+        color: Colors.grey[800], // Background color
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // First Row with Texts at both ends
-          Text(tittle, style: CustomTextStyle.buttonTextStyle),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              leftText,
+              style: CustomTextStyle.buttonTextStyle,
+            ),
+            SizedBox(height: 20),
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(leftText, style: CustomTextStyle.buttonTextStyle),
-                TextButton(onPressed: () {}, child: Text(rightText))
+                Text(
+                  tittle,
+                  style: CustomTextStyle.buttonTextStyle,
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Row(
+                    children: [
+                      Text(
+                        rightText,
+                        style: const TextStyle(color: Appcolor.primaryColor),
+                      ),
+                      const Icon(
+                        Icons.arrow_forward_ios_outlined,
+                        color: Appcolor.primaryColor,
+                        size: 13.0,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-          ),
-          const SizedBox(height: 10),
+            const SizedBox(height: 10),
 
-          // Image
-          ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              imageUrl,
-              fit: BoxFit.cover,
-              height: 120,
-              width: 200,
+            // Image
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                imageUrl,
+                fit: BoxFit.cover,
+                height: 120,
+                width: 200,
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
+            const SizedBox(height: 10),
 
-          // Three Texts Below the Image
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Column(
+            // Texts below the image
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   text1,
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
                 const SizedBox(height: 5),
                 Text(
                   text2,
-                  style: TextStyle(color: Colors.white, fontSize: 14),
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
                 const SizedBox(height: 5),
                 Text(
                   text3,
-                  style: TextStyle(color: Colors.white, fontSize: 14),
-                  textAlign: TextAlign.center,
+                  style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: 10),
-        ],
+          ],
+        ),
       ),
     );
   }

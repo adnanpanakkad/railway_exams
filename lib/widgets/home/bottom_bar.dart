@@ -8,8 +8,7 @@ class BottomBarWithIndicator extends StatefulWidget {
 
 class _BottomBarWithIndicatorState extends State<BottomBarWithIndicator> {
   int _currentIndex = 0;
-  final List<Widget> _pages = [
-    HomeScreen(),
+  final List<Widget> _pages = [HomeScreen(),
     //const Center(child: Text('Home Page', style: TextStyle(fontSize: 24))),
     const Center(child: Text('Search Page', style: TextStyle(fontSize: 24))),
     const Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),

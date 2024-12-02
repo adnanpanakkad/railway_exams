@@ -11,46 +11,50 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.green,
       appBar: const HomeAppbar(),
       body: Stack(
         children: [
-          // Main body content
           SingleChildScrollView(
             child: Column(
               children: [
-                // Container(
-                //   color: Colors.red,
-                //   height: 450,
-                //   width: double.infinity,
-                // ),
-                MainTileCard(),
+                SizedBox(
+                  height: 360,
+                  // child: ListView.builder(
+                  //   padding: EdgeInsets.symmetric(horizontal: 20),
+                  //   scrollDirection: Axis.horizontal,
+                  //   itemCount: 2,
+                  //   itemBuilder: (context, index) {
+                  //     return TopContainer(
+                  //       images: 'assets/272642155.jpg',
+                  //     );
+                  //   },
+                  // ),
+                ),
                 const SizedBox(height: 5),
                 const CenterContainer(
                   leftText: '''Meet our\nexceptional educators''',
-                  rightText: 'SEEALL',
+                  rightText: 'SEE ALL ',
                   imageUrl: 'assets/272642155.jpg',
                   text1: 'Saurabh Malik',
-                  text2: 'Quantitative Aptitute',
-                  text3: '72k folloers',
+                  text2: 'Quantitative Aptitude',
+                  text3: '72k followers',
                 ),
                 const SizedBox(height: 5),
                 const LastContainer(
-                  tittle: 'Courses on All subjects',
-                  leftText: 'Couupcoming',
-                  rightText: 'SEEALL',
+                  tittle: 'Upcoming',
+                  leftText: 'Courses on All subjects',
+                  rightText: 'SEE ALL ',
                   imageUrl: 'assets/images.jpg',
-                  text1: 'General wareness',
-                  text2: 'Target group on GK for\nRailway Grpou',
-                  text3: 'saurabh malik',
+                  text1: 'General Awareness',
+                  text2: 'Target group on GK for\nRailway Group',
+                  text3: 'Saurabh Malik',
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 60),
               ],
             ),
           ),
-
-          // Sticky Row at the bottom
-          Positioned(
+          const Positioned(
             bottom: 0,
             left: 0,
             right: 0,

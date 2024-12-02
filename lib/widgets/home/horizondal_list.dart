@@ -1,99 +1,45 @@
 import 'package:flutter/material.dart';
 
-class MainTileCard extends StatelessWidget {
-  const MainTileCard({
-    super.key,
-     this.title,
-     this.movies1,
-     this.movies2,
-  });
+class TopContainer extends StatelessWidget {
+  // Constructor with a list of image paths
+  final String images;
 
-  final String? title;
-  final List? movies1; // List for the first horizontal list
-  final List? movies2; // List for the second horizontal list
+  // Constructor
+  TopContainer({Key? key, required this.images}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    if (movies1!.isEmpty && movies2!.isEmpty) {
-      return const SizedBox();
-    }
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Text(
-            title!,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+        // Container with image and dividers
+        Container(
+          //width: double.infinity,
+          child: Image.asset(images),
         ),
-        // First horizontal ListView
-        if (movies1!.isNotEmpty)
-          SizedBox(
-            height: 150,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: movies1!.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 15),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: SizedBox(
-                      width: 100,
-                      height: 150,
-                      child: Image.asset(
-                        'assets/images.jpg', // Replace with movies1[index] for dynamic image source
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return const Center(
-                            child: Icon(Icons.broken_image, color: Colors.white),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        const SizedBox(height: 10), // Spacer between the two ListViews
-        // Second horizontal ListView
-        if (movies2!.isNotEmpty)
-          SizedBox(
-            height: 150,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: movies2!.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(right: 15),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: SizedBox(
-                      width: 100,
-                      height: 150,
-                      child: Image.asset(
-                        'assets/images.jpg', // Replace with movies2[index] for dynamic image source
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return const Center(
-                            child: Icon(Icons.broken_image, color: Colors.white),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
+        SizedBox(height: 20),
+
+        // Five rows with icons and text
+        _buildIconRow(Icons.access_alarm, 'Row 1 Description'),
+        _buildIconRow(Icons.accessibility, 'Row 2 Description'),
+        _buildIconRow(Icons.account_circle, 'Row 3 Description'),
+        _buildIconRow(Icons.ac_unit, 'Row 4 Description'),
+        _buildIconRow(Icons.airplanemode_active, 'Row 5 Description'),
       ],
+    );
+  }
+
+  // Helper function to create a row with an icon and text
+  Widget _buildIconRow(IconData icon, String text) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      child: Row(
+        children: [
+          Icon(icon, size: 30, color: Colors.blue), // Icon
+          SizedBox(width: 10),
+          Expanded(child: Text(text, style: TextStyle(fontSize: 16))),
+        ],
+      ),
     );
   }
 }
