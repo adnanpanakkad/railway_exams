@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:railway_exams/screens/login_screen.dart';
 import 'package:railway_exams/widgets/home/bottom_bar.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      home: BottomBarScreens(),
+      home: LoginScreen(),
     );
   }
 }
