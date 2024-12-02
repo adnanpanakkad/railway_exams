@@ -6,59 +6,59 @@ class HomeAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Get screen dimensions
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
-      decoration: BoxDecoration(
-        // Only add a border at the bottom
+      decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: Colors.grey, // Grey border color
-            width: 1, // Border width
+            color: Colors.grey,
+            width: 1,
           ),
         ),
       ),
       child: AppBar(
-        title: Row(
-          children: [
-            SizedBox(
-              height: screenWidth * 0.08, // Responsive logo height
-              child: Image.asset(
-                'assets/unacademy.logo.png',
-                fit: BoxFit.contain,
-                errorBuilder: (context, error, stackTrace) =>
-                    const Icon(Icons.error),
+        title: Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: Row(
+            children: [
+              SizedBox(
+                height: screenWidth * 0.08,
+                child: Image.asset(
+                  'assets/unacademy.logo.png',
+                  fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) =>
+                      const Icon(Icons.error),
+                ),
               ),
-            ),
-            SizedBox(
-                width: screenWidth * 0.025), // Spacing between logo and title
-            Text(
-              'Railway Exams', // Title text
-              style: CustomTextStyle.buttonTextStyle,
-            ),
-          ],
+              SizedBox(width: screenWidth * 0.025),
+              Text(
+                'Railway Exams',
+                style: CustomTextStyle.buttonTextStyle,
+              ),
+            ],
+          ),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.grey[900],
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 15.0),
+            padding: const EdgeInsets.only(right: 15.0, top: 25),
             child: Container(
-              width: screenWidth * 0.09, // Responsive circle size
+              width: screenWidth * 0.09,
               height: screenWidth * 0.09,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.transparent, // Circle background color
+                color: Colors.transparent,
                 border: Border.all(
-                  color: Colors.grey, // Border color
-                  width: screenWidth * 0.003, // Border width
+                  color: Colors.grey,
+                  width: screenWidth * 0.003,
                 ),
               ),
               child: IconButton(
                 icon: Icon(
                   Icons.search,
-                  size: screenWidth * 0.05, // Responsive icon size
-                  color: Colors.white, // Icon color
+                  size: screenWidth * 0.04,
+                  color: Colors.white,
                 ),
                 onPressed: () {
                   // Your search action here

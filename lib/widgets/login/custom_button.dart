@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:railway_exams/widgets/utils/app_colors.dart';
 import 'package:railway_exams/widgets/utils/custom_textstyles.dart';
 
 class CustomButton extends StatelessWidget {

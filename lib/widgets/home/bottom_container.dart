@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:railway_exams/widgets/utils/custom_textstyles.dart';
 
 class BottomContainer extends StatelessWidget {
   const BottomContainer({super.key});
@@ -6,16 +7,22 @@ class BottomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black, // Background color for the row
+      decoration: BoxDecoration(
+        color: Colors.grey[900],
+        border: const Border(
+          top: BorderSide(
+            color: Colors.grey,
+            width: 0,
+          ),
+        ),
+      ),
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'Starts at ₹100,000/month',
-            style: TextStyle(
-              color: Colors.white,
-            ),
+            style: CustomTextStyle.subtittleTextStyle1,
           ),
           ElevatedButton(
             onPressed: () {
@@ -24,11 +31,11 @@ class BottomContainer extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5)),
-              backgroundColor: Colors.greenAccent, // Green accent color
+              backgroundColor: Colors.greenAccent, 
             ),
-            child: const Text(
-              'View  plans',
-              style: TextStyle(color: Colors.white), // Button text color
+            child: Text(
+              'View subscription plans',
+              style: CustomTextStyle.buttonTextStyle1,
             ),
           ),
         ],

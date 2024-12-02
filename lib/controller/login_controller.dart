@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:railway_exams/screens/home_screen.dart';
 import 'package:railway_exams/widgets/home/bottom_bar.dart';
 import 'package:railway_exams/widgets/login/custom_snackbar.dart';
 
@@ -23,8 +22,7 @@ class LoginController extends GetxController {
           ),
         );
 
-        // Navigate to home screen or desired screen
-        Get.offAll(() => BottomBarWithIndicator());
+        Get.offAll(() => BottomBarScreens());
       } else {
         CustomSnackbar.show(
           title: 'Error',

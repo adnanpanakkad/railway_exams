@@ -24,14 +24,14 @@ class CenterContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[800], // Background color
+        color: Colors.grey[900], // Background color
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Row with left and right text
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -47,7 +47,7 @@ class CenterContainer extends StatelessWidget {
                     children: [
                       Text(
                         rightText,
-                        style: const TextStyle(color: Appcolor.primaryColor),
+                        style: CustomTextStyle.buttonTextStyle1,
                       ),
                       const Icon(
                         Icons.arrow_forward_ios_outlined,
@@ -59,7 +59,7 @@ class CenterContainer extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
 
             // Image
             ClipRRect(
@@ -79,17 +79,17 @@ class CenterContainer extends StatelessWidget {
               children: [
                 Text(
                   text1,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                  style: CustomTextStyle.subtittleTextStyle,
                 ),
                 const SizedBox(height: 5),
                 Text(
                   text2,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                  style: CustomTextStyle.subtittleTextStyle1,
                 ),
                 const SizedBox(height: 5),
                 Text(
                   text3,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                  style: CustomTextStyle.subtittleTextStyle2,
                 ),
               ],
             ),

@@ -37,6 +37,7 @@ class CustomTextfield extends StatelessWidget {
 
           // TextFormField
           TextFormField(
+            cursorColor: Colors.black,
             autovalidateMode: AutovalidateMode.onUserInteraction,
             onChanged: onChanged,
             readOnly: readOnly ?? false,
@@ -47,13 +48,13 @@ class CustomTextfield extends StatelessWidget {
               suffixIcon: suffixIcon,
               errorBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.redAccent,
+                  color: Colors.red,
                 ),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               focusedErrorBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.redAccent,
+                  color: Colors.red,
                 ),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),

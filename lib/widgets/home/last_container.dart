@@ -26,7 +26,7 @@ class LastContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[800], // Background color
+        color: Colors.grey[900],
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
@@ -37,7 +37,7 @@ class LastContainer extends StatelessWidget {
               leftText,
               style: CustomTextStyle.buttonTextStyle,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -51,7 +51,7 @@ class LastContainer extends StatelessWidget {
                     children: [
                       Text(
                         rightText,
-                        style: const TextStyle(color: Appcolor.primaryColor),
+                        style: CustomTextStyle.buttonTextStyle1,
                       ),
                       const Icon(
                         Icons.arrow_forward_ios_outlined,
@@ -63,7 +63,7 @@ class LastContainer extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 20),
 
             // Image
             ClipRRect(
@@ -81,19 +81,49 @@ class LastContainer extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  text1,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                Row(
+                  children: [
+                    Container(
+                      width: 20,
+                      height: 20,
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: Colors.transparent,
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                          color: Colors.grey,
+                          width: 1,
+                        ),
+                      ),
+                      child: const Text(
+                        'हि',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 10,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    const Text(
+                      "GENERAL AWARENESS",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 5),
                 Text(
                   text2,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                  style: CustomTextStyle.subtittleTextStyle,
                 ),
                 const SizedBox(height: 5),
                 Text(
                   text3,
-                  style: const TextStyle(color: Colors.white, fontSize: 14),
+                  style: CustomTextStyle.subtittleTextStyle2,
                 ),
               ],
             ),

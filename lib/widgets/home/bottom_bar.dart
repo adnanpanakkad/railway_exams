@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:railway_exams/screens/home_screen.dart';
 
-class BottomBarWithIndicator extends StatefulWidget {
+class BottomBarScreens extends StatefulWidget {
   @override
-  _BottomBarWithIndicatorState createState() => _BottomBarWithIndicatorState();
+  _BottomBarScreensState createState() => _BottomBarScreensState();
 }
 
-class _BottomBarWithIndicatorState extends State<BottomBarWithIndicator> {
+class _BottomBarScreensState extends State<BottomBarScreens> {
   int _currentIndex = 0;
-  final List<Widget> _pages = [HomeScreen(),
-    //const Center(child: Text('Home Page', style: TextStyle(fontSize: 24))),
+  final List<Widget> _pages = [
+    HomeScreen(),
     const Center(child: Text('Search Page', style: TextStyle(fontSize: 24))),
     const Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
   ];
@@ -17,6 +17,7 @@ class _BottomBarWithIndicatorState extends State<BottomBarWithIndicator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
@@ -27,18 +28,18 @@ class _BottomBarWithIndicatorState extends State<BottomBarWithIndicator> {
         },
         items: [
           _bottomNavigationBarItem(
-            icon: Icons.home,
+            icon: Icons.house,
             label: 'Home',
             isSelected: _currentIndex == 0,
           ),
           _bottomNavigationBarItem(
-            icon: Icons.search,
-            label: 'Search',
+            icon: Icons.pageview,
+            label: 'Self Study',
             isSelected: _currentIndex == 1,
           ),
           _bottomNavigationBarItem(
             icon: Icons.person,
-            label: 'Profile',
+            label: 'Me',
             isSelected: _currentIndex == 2,
           ),
         ],
@@ -55,10 +56,13 @@ class _BottomBarWithIndicatorState extends State<BottomBarWithIndicator> {
     required bool isSelected,
   }) {
     return BottomNavigationBarItem(
+      backgroundColor: Colors.grey[900],
       icon: Stack(
         alignment: Alignment.center,
         children: [
-          Icon(icon),
+          Icon(
+            icon,
+          ),
           if (isSelected)
             Positioned(
               bottom: -2,
